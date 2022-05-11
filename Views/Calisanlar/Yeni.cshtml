@@ -1,0 +1,20 @@
+﻿@model Calisan
+@{
+    ViewData["Title"] = "Yeni Çalışan";
+}
+
+<h1>Yeni Çalışan</h1>
+
+<form method="post">
+    <div class="form-Group">
+        <label asp-for="TamAd"> Ad:</label>
+        <input asp-for="TamAd" class="form-control" />
+        <span asp-validation-for="TamAd"></span>
+    </div>
+    <div class="form-Group">
+        <label asp-for="DepartmanId"> Departman:</label>
+        <select asp-for="DepartmanId" asp-items="@ViewBag.Departmanlar" class="form-control"></select> <!--ViewBag dinamik bir veri taşıyıcı olduğu için burada direk karşıladı içinde list arayacak bulursa çalışır bulmazsa hata verir-->
+        <span asp-validation-for="DepartmanId"></span>
+    </div>
+    <button class="btn btn-primary mt-5">Ekle</button>
+</form>

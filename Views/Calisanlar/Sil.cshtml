@@ -1,0 +1,17 @@
+﻿@model Calisan
+@{
+    ViewBag.Title = "Silme Onayı";
+}
+
+<h1>Çalışanı Silme Onayı</h1>
+
+<form method="post" asp-controller="Calisanlar" asp-action="SilOnay">
+    <p> @Model.TamAd adlı çalışanı silmeyi onaylıyor musunuz?</p>
+    <input type="hidden" asp-for="Id" />
+
+    <a asp-action="Index" class="btn btn-secondary">Vazgeç</a>
+    <button class="btn btn-danger">
+        Onaylıyorum Sil
+    </button>
+
+</form>
